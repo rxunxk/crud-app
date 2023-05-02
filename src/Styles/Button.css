@@ -1,0 +1,30 @@
+.btn {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+  background-color: white;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 90px;
+}
+
+.btn-primary {
+  color: #4581e7;
+}
+
+.btn-delete {
+  color: #d9686d;
+}
+
+.btn:active {
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.4);
+  transform: translateY(1px);
+}
+
+.btn:hover {
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+}
