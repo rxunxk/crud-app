@@ -7,6 +7,7 @@ import UserList from "./Components/UserList";
 import Fab from "@mui/material/Fab";
 import { getEditDialogSelectors } from "./redux/slices/editDialogSlice";
 import EditUserModal from "./Components/EditUserModal";
+import Navbar from "./Components/Navbar";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <>
+      <Navbar />
       {isDialogOpen && <AddUserModal />}
       {isEditDialogOpen && <EditUserModal />}
       <UserList />

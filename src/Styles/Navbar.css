@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 15svh;
+  background: #4d6da4;
+  background: linear-gradient(135deg, #4d6da4, #6ba46d);
+  color: white;
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+}

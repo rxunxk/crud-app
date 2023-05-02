@@ -36,8 +36,8 @@ const AddUserModal = () => {
 
   return (
     <div className="modal-bg">
-      <div className="modal-add">
-        <form onSubmit={submitHandler}>
+      <div className="modal-fg">
+        <form onSubmit={submitHandler} className="modal-form">
           <input
             type="text"
             placeholder="Name"

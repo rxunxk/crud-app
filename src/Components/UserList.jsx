@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { useSelector } from "react-redux";
 import { getUserSelectors } from "../redux/slices/usersSlice";
+import "../Styles/UserList.css";
 
 const UserList = () => {
   const users = useSelector(getUserSelectors);
@@ -21,7 +22,11 @@ const UserList = () => {
       </div>
     );
   } else {
-    return <h1>No users added!</h1>;
+    return (
+      <div className="empty-list-placeholder-text">
+        Click on the blue button below to add a new user!
+      </div>
+    );
   }
 };
 
