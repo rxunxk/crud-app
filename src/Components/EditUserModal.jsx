@@ -13,9 +13,9 @@ const EditUserModal = () => {
 
   const dispatch = useDispatch();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("");
+  const [name, setName] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
+  const [gender, setGender] = useState(user.gender);
 
   const nameInputHandler = (e) => {
     setName(e.target.value);
@@ -27,12 +27,31 @@ const EditUserModal = () => {
     setGender(e.target.value);
   };
 
+  const isInputValid = () => {
+    if (name === "") {
+      alert("Name cannot be empty!");
+      return false;
+    }
+    if (email === "") {
+      alert("Email cannot be empty!");
+      return false;
+    }
+    if (gender === "") {
+      alert("Gender cannot be empty!");
+      return false;
+    }
+    return true;
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(closeEditDialog());
-    dispatch(
-      editUser({ id: userId, name: name, email: email, gender: gender })
-    );
+
+    if (isInputValid()) {
+      dispatch(closeEditDialog());
+      dispatch(
+        editUser({ id: userId, name: name, email: email, gender: gender })
+      );
+    }
   };
 
   return (

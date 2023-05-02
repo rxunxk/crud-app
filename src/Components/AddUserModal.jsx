@@ -21,17 +21,36 @@ const AddUserModal = () => {
     setGender(e.target.value);
   };
 
+  const isInputValid = () => {
+    if (name === "" || name === "Name") {
+      alert("Name cannot be empty!");
+      return false;
+    }
+    if (email === "" || email === "Email") {
+      alert("Email cannot be empty!");
+      return false;
+    }
+    if (gender === "" || gender === "Gender") {
+      alert("Gender cannot be empty!");
+      return false;
+    }
+    return true;
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(closeDialog());
-    dispatch(
-      addUser({
-        name: name,
-        email: email,
-        gender: gender,
-        id: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
-      })
-    );
+
+    if (isInputValid()) {
+      dispatch(closeDialog());
+      dispatch(
+        addUser({
+          name: name,
+          email: email,
+          gender: gender,
+          id: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
+        })
+      );
+    }
   };
 
   return (
