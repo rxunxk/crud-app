@@ -2,38 +2,7 @@ import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 const usersSlice = createSlice({
   name: "users",
-  initialState: [
-    {
-      name: "Rauank",
-      gender: "male",
-      email: "rauank@gmail.com",
-      id: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
-    },
-    {
-      name: "shubham",
-      gender: "male",
-      email: "shubha,@gmail.com",
-      id: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
-    },
-    {
-      name: "shivangi",
-      gender: "female",
-      email: "shivangi@gmail.com",
-      id: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
-    },
-    {
-      name: "Vaibhav",
-      gender: "male",
-      email: "vaibhav@gmail.com",
-      id: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
-    },
-    {
-      name: "krishna",
-      gender: "male",
-      email: "krishna@gmail.com",
-      id: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
-    },
-  ],
+  initialState: [],
   reducers: {
     addUser: (state, action) => {
       state.push(action.payload);
