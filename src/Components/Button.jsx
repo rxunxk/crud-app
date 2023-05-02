@@ -4,15 +4,19 @@ import { useDispatch } from "react-redux";
 import { removeUser } from "../redux/slices/usersSlice";
 import { openEditDialog } from "../redux/slices/editDialogSlice";
 import { setUserId } from "../redux/slices/userIdSlice";
+import { openViewDialog } from "../redux/slices/viewDialogSlice";
 
 const Button = ({ label, type, id }) => {
   const dispatch = useDispatch();
 
   const clickHandler = () => {
     if (label === "Delete") dispatch(removeUser(id));
-    if (label === "Edit") {
+    else if (label === "Edit") {
       dispatch(setUserId(id));
       dispatch(openEditDialog());
+    } else if (label === "View") {
+      dispatch(setUserId(id));
+      dispatch(openViewDialog());
     }
   };
   return (

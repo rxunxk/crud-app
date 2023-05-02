@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserIdSelectors } from "../redux/slices/userIdSlice";
 import { getUserSelectors } from "../redux/slices/usersSlice";
-import "../Styles/EditUserModal.css";
+import "../Styles/AddUserModal.css";
 import { editUser } from "../redux/slices/usersSlice";
 import { closeEditDialog } from "../redux/slices/editDialogSlice";
 
@@ -38,8 +38,8 @@ const EditUserModal = () => {
   return (
     <>
       <div className="modal-bg">
-        <div className="modal-edit">
-          <form onSubmit={submitHandler}>
+        <div className="modal-fg">
+          <form onSubmit={submitHandler} className="modal-form">
             <input
               type="text"
               placeholder={user.name}
